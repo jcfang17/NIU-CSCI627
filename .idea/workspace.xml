@@ -4,19 +4,91 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d47a1d4-d4cc-400f-a519-0ee53945ad2b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSCI627_NIU.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/misc/county_fips.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/misc/state-fips.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main.js" afterDir="false" />
+    <list default="true" id="6d47a1d4-d4cc-400f-a519-0ee53945ad2b" name="Changes" comment="init commit">
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_details-ftp_v1.0_d1996.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_details-ftp_v1.0_d1997.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_details-ftp_v1.0_d1998.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_details-ftp_v1.0_d1999.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_details-ftp_v1.0_d2000.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_details-ftp_v1.0_d2001.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_details-ftp_v1.0_d2002.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_details-ftp_v1.0_d2003.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_details-ftp_v1.0_d2004.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_details-ftp_v1.0_d2005.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_details-ftp_v1.0_d2006.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_details-ftp_v1.0_d2007.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_details-ftp_v1.0_d2008.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_details-ftp_v1.0_d2009.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_details-ftp_v1.0_d2010.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_details-ftp_v1.0_d2011.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_details-ftp_v1.0_d2012.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_details-ftp_v1.0_d2013.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_details-ftp_v1.0_d2014.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_details-ftp_v1.0_d2015.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_details-ftp_v1.0_d2016.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_details-ftp_v1.0_d2017.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_details-ftp_v1.0_d2018.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_details-ftp_v1.0_d2019.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_details-ftp_v1.0_d2020.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_details-ftp_v1.0_d2021.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_details-ftp_v1.0_d2022.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_details-ftp_v1.0_d2023.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_fatalities-ftp_v1.0_d1996.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_fatalities-ftp_v1.0_d1997.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_fatalities-ftp_v1.0_d1998.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_fatalities-ftp_v1.0_d1999.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_fatalities-ftp_v1.0_d2000.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_fatalities-ftp_v1.0_d2001.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_fatalities-ftp_v1.0_d2002.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_fatalities-ftp_v1.0_d2003.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_fatalities-ftp_v1.0_d2004.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_fatalities-ftp_v1.0_d2005.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_fatalities-ftp_v1.0_d2006.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_fatalities-ftp_v1.0_d2007.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_fatalities-ftp_v1.0_d2008.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_fatalities-ftp_v1.0_d2009.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_fatalities-ftp_v1.0_d2010.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_fatalities-ftp_v1.0_d2011.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_fatalities-ftp_v1.0_d2012.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_fatalities-ftp_v1.0_d2013.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_fatalities-ftp_v1.0_d2014.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_fatalities-ftp_v1.0_d2015.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_fatalities-ftp_v1.0_d2016.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_fatalities-ftp_v1.0_d2017.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_fatalities-ftp_v1.0_d2018.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_fatalities-ftp_v1.0_d2019.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_fatalities-ftp_v1.0_d2020.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_fatalities-ftp_v1.0_d2021.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_fatalities-ftp_v1.0_d2022.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_fatalities-ftp_v1.0_d2023.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_locations-ftp_v1.0_d1996.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_locations-ftp_v1.0_d1997.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_locations-ftp_v1.0_d1998.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_locations-ftp_v1.0_d1999.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_locations-ftp_v1.0_d2000.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_locations-ftp_v1.0_d2001.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_locations-ftp_v1.0_d2002.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_locations-ftp_v1.0_d2003.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_locations-ftp_v1.0_d2004.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_locations-ftp_v1.0_d2005.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_locations-ftp_v1.0_d2006.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_locations-ftp_v1.0_d2007.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_locations-ftp_v1.0_d2008.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_locations-ftp_v1.0_d2009.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_locations-ftp_v1.0_d2010.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_locations-ftp_v1.0_d2011.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_locations-ftp_v1.0_d2012.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_locations-ftp_v1.0_d2013.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_locations-ftp_v1.0_d2014.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_locations-ftp_v1.0_d2015.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_locations-ftp_v1.0_d2016.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_locations-ftp_v1.0_d2017.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_locations-ftp_v1.0_d2018.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_locations-ftp_v1.0_d2019.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_locations-ftp_v1.0_d2020.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_locations-ftp_v1.0_d2021.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_locations-ftp_v1.0_d2022.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stormdata/StormEvents_locations-ftp_v1.0_d2023.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,12 +149,25 @@
       <option name="presentableId" value="Default" />
       <updated>1701585333794</updated>
       <workItem from="1701585334829" duration="1693000" />
-      <workItem from="1701587040421" duration="29727000" />
+      <workItem from="1701587040421" duration="30211000" />
     </task>
+    <task id="LOCAL-00001" summary="init commit">
+      <option name="closed" value="true" />
+      <created>1701641676898</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1701641676898</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="init commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="init commit" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
