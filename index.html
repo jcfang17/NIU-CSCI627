@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSCI_627</title>
+
+</head>
+<body>
+<div></div>
+<label for="slide">Year</label>
+<input id="slide" type="range" min=1996 max=2022 step="1" value="2022" onchange="changeCurrentYear(this.value);drawStormDetailDots(this.value)">
+<button onclick="drawStormDetailDots(currentYear)">Replay</button>
+<div id="plot1"></div>
+<div id="swatch"></div>
+
+
+</body>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.js></script>
+<script src="https://code.jquery.com/jquery-3.7.1.js" ></script>
+<script src="https://unpkg.com/topojson@3"></script>
+<script src="src/main.js"></script>
+</html>
