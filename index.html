@@ -7,9 +7,19 @@
 </head>
 <body>
 <div></div>
-<label for="slide">Year</label>
-<input id="slide" type="range" min=1996 max=2022 step="1" value="2022" onchange="changeCurrentYear(this.value);drawStormDetailDots(this.value)">
-<button onclick="drawStormDetailDots(currentYear)">Replay</button>
+<label for="plotType"></label>
+<select id="plotType" onchange="changePlotType(this.value);plotGen()"
+        style="margin: 20px; ">
+    <option value="dots">Storm Events</option>
+    <option value="damage">Storm Damage</option>
+</select>
+<label for="yearRangeSlide">Year</label>
+<input id="yearRangeSlide" type="range" min=1996 max=2023 step="1" value="2023"
+       onchange="changeCurrentYear(this.value);plotGen()"
+       oninput="this.nextElementSibling.value = this.value"
+       style="margin: 0; width: 200px;">
+<output>2023</output>
+<button onclick="plotGen()" style="margin: 20px">Replay</button>
 <div id="plot1"></div>
 <div id="swatch"></div>
 <div id="plot2"></div>

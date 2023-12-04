@@ -1,9 +1,9 @@
 const projection = d3.geoAlbersUsa().scale(1280).translate([480, 300])
 let us;
-let currentYear;
 const yearRange = [1972, 2022];
-const yearRangeSlider = document.getElementById("yearRangeSlider");
-
+const yearRangeSlider = document.getElementById("yearRangeSlide");
+let currentYear=yearRangeSlider.value;
+let plotType = document.getElementById("plotType").value
 
 /**
  *
@@ -29,7 +29,7 @@ function getBaseMap() {
                 .attr("d", d3.geoPath())
 
 
-            const g = svg.append("g")
+            svg.append("g")
                 .attr("fill", "none")
                 .attr("stroke", "black");
 
@@ -77,7 +77,6 @@ function drawStormDots(year) {
           clearTimeout(clrId)
       }
 
-      let dots = [...data.map(d => projection([parseFloat(d.LONGITUDE), parseFloat(d.LATITUDE)]))].filter(d => d != null)
       let tLocFiltered = data.map(d => d = {
           xy: projection([parseFloat(d.LONGITUDE), parseFloat(d.LATITUDE)]),
           name: d.LOCATION,
@@ -105,9 +104,10 @@ function drawStormDots(year) {
       svg.selectAll("circle")
           .transition()
           .duration(80)
-          .attr("r", d => 1)
+          .attr("r", 1)
           // .delay((d,i) => { return i*1})
-          .delay((d,i) => { return 5})
+          .delay(5)
+
 
 
 
@@ -250,9 +250,9 @@ function drawStormDetailDots(year) {
         svg.selectAll("circle")
             .transition()
             .duration(800)
-            .attr("r", d => 1)
-            // .delay((d,i) => { return i*1})
-            .delay((d,i) => { return 5})
+            .attr("r",1)
+            .delay((d,i) => { return i*1})
+            // .delay((d,i) => { return 5})
 
 
 
@@ -291,10 +291,10 @@ function drawStormDetailDots(year) {
             })
 
 
+        div2 = document.getElementById("swatch")
+        div2.innerHTML=""
+        div2.appendChild(drawSwathes())
         const swatch = d3.select("#swatch")
-        swatch.selectAll("*").remove()
-        swatch.node.appendChild(drawSwathes())
-
         swatch.selectAll("rect")
             .on("mouseover", function(event,data) {
                 d3.select(this)
@@ -339,8 +339,28 @@ function plotHexBinMap(year) {
 
         const svg = d3.select(baseMap)
         svg.selectAll("circle")
-            .transition(200)
+            .transition()
+            .duration(200)
             .remove()
+
+        svg.selectAll("path")
+            .remove()
+
+        svg.append("path")
+            .datum(topojson.merge(us, us.objects.states.geometries))
+            .attr("fill", "#ddd")
+            .attr("d", d3.geoPath());
+
+        svg.append("path")
+            .datum(topojson.mesh(us, us.objects.states, (a, b) => a !== b))
+            .attr('fill','none')
+            .attr("stroke", "white")
+            .attr("stroke-linejoin", "round")
+            .attr("d", d3.geoPath())
+
+        svg.append("g")
+            .attr("fill", "none")
+            .attr("stroke", "black");
 
         const hexbin = d3.hexbin()
             .extent([0, 0], [960, 600])
@@ -382,10 +402,25 @@ function plotHexBinMap(year) {
     })
 }
 
+function changePlotType(type) {
+    plotType = type
+    plotGen()
+}
+function plotGen() {
+    switch (plotType) {
+        case "dots":
+            drawStormDetailDots(currentYear)
+            break;
+        case "damage":
+            plotHexBinMap(currentYear)
+            break;
+        default:
+            drawStormDetailDots(currentYear)
+            break;
+    }
+}
 
-drawStormDetailDots(2022)
-plotHexBinMap(2022)
-
+plotGen()
 
 //-----------------helper------------------///
 function legend({color, ...options}) {
