@@ -1,0 +1,8 @@
+CSCI-627 Project Design
+
+Visualizing NOAA US storm events data: http://www.ncei.noaa.gov/pub/data/swdi/stormevents/csvfiles/
+
+Data retrieved at 2023-11-29
+Data needed to be downloaded and extracted to ./stormdata/ directory to work locally
+
+Only used data from year 1996-2023
