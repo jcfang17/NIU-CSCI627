@@ -257,7 +257,7 @@ function drawStormDetailDots(year) {
 
 
         svg.selectAll('circle')
-            .on('mouseover', function (d,i) {
+            .on('pointerover', function (d,i) {
                 d3.select(this)
                     .attr('fill','red')
                     .attr('r',5)
@@ -269,7 +269,7 @@ function drawStormDetailDots(year) {
                     .html(d=>d.LOCATION)
 
             })
-            .on('mouseout', function () {
+            .on('pointerout', function () {
                 d3.select(this)
                     .attr('fill','blue')
                     .attr('r',1)
@@ -296,7 +296,7 @@ function drawStormDetailDots(year) {
         div2.appendChild(drawSwathes())
         const swatch = d3.select("#swatch")
         swatch.selectAll("rect")
-            .on("mouseover", function(event,data) {
+            .on("pointerover", function(event,data) {
                 d3.select(this)
                     .attr("stroke","black")
                     .attr("height",25)
@@ -306,7 +306,7 @@ function drawStormDetailDots(year) {
                     .attr("stroke","black")
                     .raise()
             })
-            .on("mouseout", function(event,data) {
+            .on("pointerout", function(event,data) {
                 d3.select(this)
                     .attr("stroke","none")
                     .attr("height",20)
