@@ -9,5 +9,8 @@
     <orderEntry type="library" name="d3" level="application" />
     <orderEntry type="library" name="topojson" level="application" />
     <orderEntry type="library" name="d3-hexbin.v0.2" level="application" />
+    <orderEntry type="library" name="d3-hexbin.v0.2" level="application" />
+    <orderEntry type="library" name="jquery-3.7.1" level="application" />
+    <orderEntry type="library" name="topojson" level="application" />
   </component>
 </module>

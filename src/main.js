@@ -14,7 +14,8 @@ function getBaseMap() {
         .then((data)=>{
             us = data
             const svg = d3.create("svg")
-                .attr("viewBox", [0, 0, 960, 600]);
+                .attr("viewBox", [0, 0, 960, 600])
+
 
             svg.append("path")
                 .datum(topojson.merge(us, us.objects.states.geometries))
@@ -31,7 +32,27 @@ function getBaseMap() {
 
             svg.append("g")
                 .attr("fill", "none")
-                .attr("stroke", "black");
+                .attr("stroke", "black")
+                // .on("click", function(d,i) {
+                //     svg.transition().duration(750).call(
+                //     zoom.transform,
+                //     d3.zoomIdentity,
+                //     d3.zoomTransform(svg.node()).invert([width / 2, height / 2])
+                //     );
+                // })
+
+            // const zoom = d3.zoom()
+            //     .scaleExtent([1, 8])
+            //     .extent([[0, 0], [960, 600]])
+            //     .on("zoom", zoomed);
+            //
+            // svg.call(zoom)
+            //
+            //
+            // function zoomed(event) {
+            //     const {transform} = event
+            //     svg.attr("transform", transform);
+            // }
 
             return svg.node();
         })
@@ -80,7 +101,10 @@ function drawStormDots(year) {
       let tLocFiltered = data.map(d => d = {
           xy: projection([parseFloat(d.LONGITUDE), parseFloat(d.LATITUDE)]),
           name: d.LOCATION,
-          EPISODE_ID: d.EPISODE_ID
+          EPISODE_ID: d.EPISODE_ID,
+          STATE: d.STATE,
+          EVENT_NARRATIVE: d.EVENT_NARRATIVE,
+          BEGIN_DATE: d.MONTH_NAME+d.BEGIN_DAY,
       })
           .filter(d => d.xy != null).sort((a, b) => a.EPISODE_ID - b.EPISODE_ID)
 
@@ -162,6 +186,9 @@ function getData(year){
                 TYPE: d.EVENT_TYPE,
                 DAMAGE_PROPERTY: parseFloat(d.DAMAGE_PROPERTY),
                 DAMAGE_CROPS: parseFloat(d.DAMAGE_CROPS),
+                STATE: d.STATE,
+                EVENT_NARRATIVE: d.EVENT_NARRATIVE,
+                BEGIN_DATE: d.MONTH_NAME+" "+d.BEGIN_DAY,
             })
             .filter(d => d.xy != null)
             .sort((a, b) => parseInt(a.EVENT_ID) - parseInt(b.EVENT_ID))
@@ -231,7 +258,27 @@ function drawStormDetailDots(year) {
 
         const svg = d3.select(baseMap)
 
-        svg.selectAll('circle').remove();
+        svg.selectAll("circle")
+            .remove()
+
+        svg.selectAll("path")
+            .remove()
+
+        svg.append("path")
+            .datum(topojson.merge(us, us.objects.states.geometries))
+            .attr("fill", "#ddd")
+            .attr("d", d3.geoPath());
+
+        svg.append("path")
+            .datum(topojson.mesh(us, us.objects.states, (a, b) => a !== b))
+            .attr('fill','none')
+            .attr("stroke", "white")
+            .attr("stroke-linejoin", "round")
+            .attr("d", d3.geoPath())
+
+        svg.append("g")
+            .attr("fill", "none")
+            .attr("stroke", "black");
 
 
         svg.append('g')
@@ -246,6 +293,15 @@ function drawStormDetailDots(year) {
             .attr("epid",d=>d.EPISODE_ID)
             .attr("eid",d=>d.EVENT_ID)
             .attr("type",d=>d.TYPE)
+            .append("title")
+            .text(d=> {
+                return d.TYPE + ": " + d.LOCATION + ", " + d.STATE
+                    + "\n" + "Date: " + d.BEGIN_DATE
+                + "\n" +( (parseInt(d.DAMAGE_PROPERTY) + parseInt(d.DAMAGE_CROPS))>0?("Damage: "+parseInt(d.DAMAGE_PROPERTY) + parseInt(d.DAMAGE_CROPS)+"K$"):"")
+                + "\n" +( d.EVENT_NARRATIVE!==undefined?d.EVENT_NARRATIVE:"")
+            })
+
+
 
         svg.selectAll("circle")
             .transition()
@@ -255,11 +311,9 @@ function drawStormDetailDots(year) {
             // .delay((d,i) => { return 5})
 
 
-
         svg.selectAll('circle')
             .on('pointerover', function (d,i) {
                 d3.select(this)
-                    .attr('fill','red')
                     .attr('r',5)
                 d3.select('#tooltip')
                     .style('left', (event.pageX + 10) + 'px')
@@ -267,6 +321,7 @@ function drawStormDetailDots(year) {
                     .style('display', 'inline-block')
                     .attr('text',d=>d.LOCATION)
                     .html(d=>d.LOCATION)
+                    .raise()
 
             })
             .on('pointerout', function () {
@@ -315,7 +370,10 @@ function drawStormDetailDots(year) {
                     .attr("r",1)
                     .attr("stroke","none")
             })
+
     })
+
+
 }
 
 function plotStackedBarChart(year) {
@@ -339,8 +397,6 @@ function plotHexBinMap(year) {
 
         const svg = d3.select(baseMap)
         svg.selectAll("circle")
-            .transition()
-            .duration(200)
             .remove()
 
         svg.selectAll("path")
@@ -374,7 +430,7 @@ function plotHexBinMap(year) {
         // console.log(bins.map(d=>d.DAMAGE_CROPS))
 
         const colorHex = d3.scaleSequentialLog([1,500], d3.interpolateBlues);
-        const radius = d3.scaleSqrt([d3.min(bins,d=>d.DAMAGE_PROP), d3.max(bins, d => d.DAMAGE_PROP)], [0, hexbin.radius() * Math.SQRT2]);
+        const radius = d3.scaleSqrt([d3.min(bins,d=>d.DAMAGE_PROP), d3.max(bins, d => d.DAMAGE_PROP)], [5, 18]);
 
         svg.append("g")
             .selectAll("path")
@@ -384,7 +440,7 @@ function plotHexBinMap(year) {
             .attr("d", d => hexbin.hexagon(radius(d.DAMAGE_PROP)))
             .attr("fill", d => colorHex(d.DAMAGE_CROPS+1))
             .attr("stroke", d => d3.lab(colorHex(d.DAMAGE_CROPS+1)).darker())
-            .append("title")
+
 
         const swatch = d3.select("#swatch")
         swatch.selectAll("*")
@@ -397,6 +453,16 @@ function plotHexBinMap(year) {
                 tickFormat: ".0s",
                 ticks: 5
             }));
+        swatch.append("g")
+            .selectAll("path")
+            .data([{xy:[0,0]},{xy:[10,10]},{xy:[10,10]},{xy:[0,0]},{xy:[0,0]}])
+            .join("path")
+            .attr("transform", (d, i) => `translate(600,20)`)
+            .attr("d", d => hexbin.hexagon(30))
+            .attr("fill", d => colorHex(d))
+            .attr("stroke", d => d3.lab(colorHex(d)).darker())
+
+
 
 
     })
@@ -421,6 +487,8 @@ function plotGen() {
 }
 
 plotGen()
+
+
 
 //-----------------helper------------------///
 function legend({color, ...options}) {
