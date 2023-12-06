@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d47a1d4-d4cc-400f-a519-0ee53945ad2b" name="Changes" comment="add readme">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="6d47a1d4-d4cc-400f-a519-0ee53945ad2b" name="Changes" comment="bugs">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSCI627_NIU.iml" beforeDir="false" afterPath="$PROJECT_DIR$/CSCI627_NIU.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -75,7 +73,7 @@
       <workItem from="1701585334829" duration="1693000" />
       <workItem from="1701587040421" duration="47062000" />
       <workItem from="1701730305053" duration="4299000" />
-      <workItem from="1701813308602" duration="10509000" />
+      <workItem from="1701813308602" duration="11121000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <option name="closed" value="true" />
@@ -117,7 +115,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701665043361</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="bugs">
+      <option name="closed" value="true" />
+      <created>1701824218007</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1701824218007</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -128,7 +134,8 @@
     <MESSAGE value="add damage visualization" />
     <MESSAGE value="usable" />
     <MESSAGE value="add readme" />
-    <option name="LAST_COMMIT_MESSAGE" value="add readme" />
+    <MESSAGE value="bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="bugs" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

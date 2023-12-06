@@ -297,8 +297,8 @@ function drawStormDetailDots(year) {
             .text(d=> {
                 return d.TYPE + ": " + d.LOCATION + ", " + d.STATE
                     + "\n" + "Date: " + d.BEGIN_DATE
-                + "\n" +( (parseInt(d.DAMAGE_PROPERTY) + parseInt(d.DAMAGE_CROPS))>0?("Damage: "+parseInt(d.DAMAGE_PROPERTY) + parseInt(d.DAMAGE_CROPS)+"K$"):"")
-                + "\n" +( d.EVENT_NARRATIVE!==undefined?d.EVENT_NARRATIVE:"")
+                + ( (parseInt(d.DAMAGE_PROPERTY) + parseInt(d.DAMAGE_CROPS))>0?("\n" +"Damage: "+parseInt(d.DAMAGE_PROPERTY) + parseInt(d.DAMAGE_CROPS)+"K$"):"")
+                + ("\n" + d.EVENT_NARRATIVE!==undefined?("\n" +d.EVENT_NARRATIVE):"")
             })
 
 
@@ -437,9 +437,12 @@ function plotHexBinMap(year) {
             .data(bins)
             .join("path")
             .attr("transform", d => `translate(${d.x},${d.y})`)
-            .attr("d", d => hexbin.hexagon(radius(d.DAMAGE_PROP)))
+            .attr("d",1)
             .attr("fill", d => colorHex(d.DAMAGE_CROPS+1))
             .attr("stroke", d => d3.lab(colorHex(d.DAMAGE_CROPS+1)).darker())
+            .transition()
+            .attr("d", d => hexbin.hexagon(radius(d.DAMAGE_PROP))) // no effects here
+
 
 
         const swatch = d3.select("#swatch")
