@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d47a1d4-d4cc-400f-a519-0ee53945ad2b" name="Changes" comment="bugs">
-      <change afterPath="$PROJECT_DIR$/misc/hw5.html" afterDir="false" />
+    <list default="true" id="6d47a1d4-d4cc-400f-a519-0ee53945ad2b" name="Changes" comment="add notebook cells">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +76,11 @@
       <workItem from="1701730305053" duration="4299000" />
       <workItem from="1701813308602" duration="11183000" />
       <workItem from="1701825642233" duration="1217000" />
-      <workItem from="1701843331845" duration="1414000" />
+      <workItem from="1701843331845" duration="1439000" />
+      <workItem from="1701845569048" duration="31000" />
+      <workItem from="1701896954218" duration="361000" />
+      <workItem from="1702067726274" duration="1409000" />
+      <workItem from="1702083205332" duration="429000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <option name="closed" value="true" />
@@ -134,7 +138,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701824878077</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="add notebook cells">
+      <option name="closed" value="true" />
+      <created>1701844777952</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1701844777952</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -146,7 +158,8 @@
     <MESSAGE value="usable" />
     <MESSAGE value="add readme" />
     <MESSAGE value="bugs" />
-    <option name="LAST_COMMIT_MESSAGE" value="bugs" />
+    <MESSAGE value="add notebook cells" />
+    <option name="LAST_COMMIT_MESSAGE" value="add notebook cells" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -202,14 +202,14 @@ function getData(year){
 
 
 
-const stormType = [ "Flood", "Flash Flood","Marine Thunderstorm Wind",
-    "Thunderstorm Wind", "Tornado", "Hail", "Heavy Rain",
-    "Waterspout", "Marine High Wind", "Marine Strong Wind", "Debris Flow",
-    "Marine Hail", "Lightning", "Funnel Cloud", "Dust Devil"]
-const palette = ["#8a3ffc", '#8a3ffc',"#33b1ff", "#007d79",
-    "#ff7eb6", "#fa4d56", "#fff1f1", "#6fdc8c",
-    "#4589ff", "#d12771", "#d2a106", "#08bdba",
-    "#bae6ff", "#ba4e00", "#d4bbff"]
+const stormType = [ "Marine Thunderstorm Wind","Marine Hail", "Marine High Wind", "Marine Strong Wind",
+    "Thunderstorm Wind", "Tornado","Debris Flow", "Dust Devil",
+    "Lightning","Waterspout","Hail", "Funnel Cloud",
+    "Heavy Rain","Flood", "Flash Flood",]
+const palette = ["#0b3e75", '#15559f',"#2875d0", "#4589ff",
+    "#d13271", "#D2A106FF","#675421", "#ffa622",
+    "#ea1525","#68da4c", "#54aba0", "#09bdba",
+    "#7632f1", "#9d6cf1", "#cfb6fa"]
 const stormTypeColor = d3.scaleOrdinal(stormType,palette)
 
 function drawSwathes(){
@@ -309,6 +309,8 @@ function drawStormDetailDots(year) {
             .attr("r",1)
             .delay((d,i) => { return i*1})
             // .delay((d,i) => { return 5})
+
+
 
 
         svg.selectAll('circle')

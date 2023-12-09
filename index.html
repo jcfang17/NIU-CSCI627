@@ -6,7 +6,9 @@
 
 </head>
 <body>
-<div></div>
+<div>
+    <h3 style="align-content: center;font-family: sans-serif">Visualizing NOAA US storm events data</h3>
+</div>
 <label for="plotType"></label>
 <select id="plotType" onchange="changePlotType(this.value);plotGen()"
         style="margin: 20px; ">
@@ -23,9 +25,24 @@
 <div id="plot1"></div>
 <div id="swatch"></div>
 <div id="plot2"></div>
-<div id="hws">
 
-    <h3><a href=“misc/hw5.html”>Homework assignments demo</a></h3>
+<div id="readme">
+    <h3>README</h3>
+    <p>
+        CSCI-627 Project Design<br>
+
+        Visualizing NOAA US storm events data: http://www.ncei.noaa.gov/pub/data/swdi/stormevents/csvfiles/<br>
+
+        Data retrieved at 2023-11-29<br>
+        Data needed to be downloaded and extracted to ./stormdata/ directory to work locally<br>
+
+        Only used data from year 1996-2023<br>
+    </p>
+</div>
+
+<div id="hws">
+<br><br>
+    <h4><a href=misc/hw5.html>Homework assignments demo</a></h4>
 
 </div>
 
